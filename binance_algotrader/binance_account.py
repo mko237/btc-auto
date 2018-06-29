@@ -1,6 +1,6 @@
 import os
 from binance.websockets import BinanceSocketManager
-import ConfigParser
+import configparser
 from binance.client import Client
 from datetime import datetime
 
@@ -30,7 +30,7 @@ class BinanceAccount(Account):
         self.last_updated = 'xxx'
         self.sandbox = sandbox
         #gdax sandbox cred
-        config = ConfigParser.ConfigParser()
+        config = configparser.ConfigParser()
         cur_dir = os.path.dirname(__file__)
         config.read(os.path.join(cur_dir,"config.txt"))
         self.api_key = config.get("binance","key")
