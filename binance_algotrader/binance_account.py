@@ -141,3 +141,9 @@ class BinanceAccount(Account):
     def start_kline_stream(self,symbol):
         self.socket_manager.start_kline_socket(symbol,self.process_message)
         self.socket_manager.start()
+ 
+    def start_multi_stream(self,streams,callback=None):
+        if callback is None:
+            self.process_message
+        self.socket_manager.start_multiplex_socket(streams,callback)
+        self.socket_manager.start()
