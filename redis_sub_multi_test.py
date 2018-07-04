@@ -12,10 +12,12 @@ async def reader(stream_name):
     while True:
        msg = await channel[0].get(encoding='utf-8')
        msg = msg.replace('\'','\"')
+       msg = msg.replace("False","\"False\"")
+       msg = msg.replace("True","\"True\"")
        msg_json = json.loads(msg)
        #i = random.uniform(0,4)
        #await asyncio.sleep(i)
-       print("{}: {}".format(stream_name,msg_json['c']))
+       print("{}: {}".format(stream_name,msg_json))
 
 loop = asyncio.get_event_loop()
 
