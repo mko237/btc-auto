@@ -10,6 +10,7 @@ redis = "*"
 aioredis = "*"
 async-timeout = "*"
 python-binance = "*"
+TA-Lib = "*"
 
 [requires]
 python_version = "3.5"
