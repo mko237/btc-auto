@@ -44,7 +44,9 @@ kline_socket_mapping = dict(e='event_type'
                            ,s='symbol'
                            ,k='kline'
                            )
-kline_history_length=100
+kline_history_length=300
+
+
 
 async def reader(stream_name):
     print("Listening for msgs from: {}...".format(stream_name))
@@ -61,8 +63,8 @@ async def reader(stream_name):
        msg_json = json.loads(msg)
        #i = random.uniform(0,4)
        #await asyncio.sleep(i)
-       msg_json = {kline_socket_mapping[k]:v for k,v in msg_json.items()}
-       msg_json["kline"]={kline_key_mapping[k]:v for k,v in msg_json["kline"].items()}  
+       msg_json = {(kline_socket_mapping[k] if k in kline_socket_mapping.keys() else k):v for k,v in msg_json.items() }
+       msg_json["kline"]={(kline_key_mapping[k] if k in kline_key_mapping.keys() else k):v for k,v in msg_json["kline"].items()}
        if msg_json["kline"]["end_of_kline"] == "True":
           close = float(msg_json["kline"]["close"])
           kline_history = np.append(kline_history,close)

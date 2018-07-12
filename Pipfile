@@ -11,6 +11,7 @@ aioredis = "*"
 async-timeout = "*"
 python-binance = "*"
 TA-Lib = "*"
+pymongo = "*"
 
 [requires]
 python_version = "3.5"

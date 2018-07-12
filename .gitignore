@@ -1,4 +1,5 @@
 config.txt
+mongodb_data/*
 *.pyc
 *.log
 *.rdb
