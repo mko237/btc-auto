@@ -70,9 +70,9 @@ async def reader(stream_name):
           kline_history = np.append(kline_history,close)
           if kline_history.size > kline_history_length:
               kline_history = np.delete(kline_history,0)
-          msg_json["kline_history"] = kline_history.tolist()
-          msg_json["sma_30"] = talib.SMA(kline_history,30).tolist()
-          msg_json["sma_90"] = talib.SMA(kline_history,90).tolist()
+          msg_json["kline_history"] = kline_history.tolist()[-15:]
+          msg_json["sma_30"] = talib.SMA(kline_history,30).tolist()[-5:]
+          msg_json["sma_90"] = talib.SMA(kline_history,90).tolist()[-5:]
           print("{}".format(stream_name),end=': ')
           pprint.pprint(msg_json)
           pub.publish_json("assets",msg_json)

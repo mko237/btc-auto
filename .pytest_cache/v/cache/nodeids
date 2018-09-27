@@ -1,0 +1,16 @@
+[
+  "test_binance_account_btest.py::test_get_orderbook_ticker",
+  "test_binance_account_btest.py::test_order_market_buy",
+  "test_binance_account_btest.py::test_order_market_sell",
+  "test_binance_account_btest.py::test_get_price",
+  "test_binance_account_btest.py::test_get_net_value",
+  "test_binance_account_btest.py::test_get_balance",
+  "test_binance_account_btest.py::test_place_order",
+  "test_binance_account_btest.py::test_place_order_1",
+  "test_trade_platform.py::test_get_state",
+  "test_trade_platform.py::test_open_long_pos",
+  "test_trade_platform.py::test_open_long_pos_2",
+  "test_trade_platform.py::test_open_short_pos",
+  "test_trade_platform.py::test_open_short_pos_2",
+  "test_trade_platform.py::test_close_pos"
+]

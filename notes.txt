@@ -1,0 +1,6 @@
+1.) build the state:
+    - each state value will consist of percent change between one period and the next
+    - sequences, such as sma_30 will be individual entries in the state space
+    - current positions will need to be stored in the state also
+2.) train:
+3.) backtest:    

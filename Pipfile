@@ -12,6 +12,8 @@ async-timeout = "*"
 python-binance = "*"
 TA-Lib = "*"
 pymongo = "*"
+pytest = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.5"
